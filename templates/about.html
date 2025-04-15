@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About - CTIH Lite</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="nav-brand">CTIH</div>
+        <div class="nav-links" id="navLinks">
+            <a href="/"><i class="fas fa-home"></i> Home</a>
+            <a href="/history"><i class="fas fa-history"></i> History</a>
+            <a href="/about" class="active"><i class="fas fa-info-circle"></i> About</a>
+        </div>
+        <div class="nav-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>About Cyber Threat Intelligence Hub</h2>
+        
+        <div class="about-section">
+            <div class="about-card">
+                <h3><i class="fas fa-shield-alt"></i> Our Mission</h3>
+                <p>CTIH Lite is designed to help organizations identify and classify cyber threats in real-time. Our platform uses advanced machine learning to analyze threat descriptions and provide accurate classifications with confidence scores.</p>
+            </div>
+
+            <div class="about-card">
+                <h3><i class="fas fa-brain"></i> How It Works</h3>
+                <p>The system uses a trained machine learning model to analyze threat descriptions and classify them into various categories such as malware, phishing, DDoS attacks, and more. Each classification comes with confidence scores to help assess the accuracy of the prediction.</p>
+            </div>
+
+            <div class="about-card">
+                <h3><i class="fas fa-lock"></i> Security Features</h3>
+                <ul>
+                    <li>Real-time threat classification</li>
+                    <li>Confidence scoring for predictions</li>
+                    <li>Blockchain-based threat history</li>
+                    <li>Secure data storage</li>
+                </ul>
+            </div>
+
+            <div class="about-card">
+                <h3><i class="fas fa-code"></i> Technology Stack</h3>
+                <ul>
+                    <li>Python Flask for backend</li>
+                    <li>Scikit-learn for machine learning</li>
+                    <li>Blockchain for data integrity</li>
+                    <li>Modern HTML/CSS/JavaScript frontend</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h3><i class="fas fa-users"></i> Our Team</h3>
+            <div class="team-members">
+                <div class="team-member">
+                    <div class="member-info">
+                        <h4>ARSHA M NAIR</h4>
+                        <p class="roll-number">23CU0310032</p>
+                        <p class="role">Lead Developer</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-info">
+                        <h4>SANTHWANA MANOJ</h4>
+                        <p class="roll-number">23CU0310288</p>
+                        <p class="role">Security Analyst</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-info">
+                        <h4>YUTHIKA</h4>
+                        <p class="roll-number">23CU0310434</p>
+                        <p class="role">UI/UX Designer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-member">
+            <p class="developer-12">Developed by <strong>Arsha M Nair</strong></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html> 

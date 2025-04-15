@@ -1,0 +1,440 @@
+[
+    {
+        "threat": "\"Web application logs show unusual SQL queries being executed through the login form. The queries contain UNION SELECT statements and attempts to access system tables.\"",
+        "category": "sql_injection",
+        "hash": "be691bf7e2a251125129bef6ec626a01939553f97b92a9ca4bc824f964d3884a"
+    },
+    {
+        "threat": "\"All files on the network share have been encrypted with a .locked extension. A ransom note has appeared demanding payment in Bitcoin to restore access to the files.\"",
+        "category": "ransomware",
+        "hash": "554e82e217776b82e49a4dbfb15c9e9b053dbffe1ebd5a0b2ccc33a53cdfc3aa"
+    },
+    {
+        "threat": "\"Multiple servers experiencing high traffic from different IP addresses, causing service slowdown. The traffic appears to be targeting our login endpoints with repeated requests.\"",
+        "category": {
+            "primary_prediction": "ddos",
+            "confidence_scores": [
+                [
+                    "ddos",
+                    0.15084807691050953
+                ],
+                [
+                    "man_in_middle",
+                    0.1091342103249226
+                ],
+                [
+                    "credential_stuffing",
+                    0.07242382653269164
+                ]
+            ]
+        },
+        "hash": "95fdf4a97ace954c2f67f04f2e9db6d194f954be603690dd6e3461dd0eaf8bbb"
+    },
+    {
+        "threat": "Employee stealing sensitive company data",
+        "category": {
+            "primary_prediction": "insider_threat",
+            "confidence_scores": [
+                [
+                    "insider_threat",
+                    0.3419201036594272
+                ],
+                [
+                    "data_breach",
+                    0.1416725105025649
+                ],
+                [
+                    "credential_stuffing",
+                    0.05447487028072143
+                ]
+            ]
+        },
+        "hash": "600ab30b7ddcd850eab1b89e6e5da0e25f5788e8634afb02761405a031b3722d"
+    },
+    {
+        "threat": "Employee stealing sensitive company data",
+        "category": "insider_threat",
+        "confidence_scores": [
+            [
+                "insider_threat",
+                0.3419201036594272
+            ],
+            [
+                "data_breach",
+                0.1416725105025649
+            ],
+            [
+                "credential_stuffing",
+                0.05447487028072143
+            ]
+        ],
+        "hash": "ce2ffb2b4f4e8182228c94f8e2cab24a82b5f140715562ea52a95b75cd583960"
+    },
+    {
+        "threat": "\"Multiple login attempts detected from different IP addresses using common password combinations\"",
+        "category": "brute_force",
+        "confidence_scores": [
+            [
+                "brute_force",
+                0.2823730620910763
+            ],
+            [
+                "credential_stuffing",
+                0.11876671892990397
+            ],
+            [
+                "malware",
+                0.11046214548227869
+            ]
+        ],
+        "hash": "6cad0c70945e7e1377c501913b436db8b73de9a586cef963a163859b63a126a7"
+    },
+    {
+        "threat": "Attacker positioning between user and website",
+        "category": "watering_hole",
+        "confidence_scores": [
+            [
+                "watering_hole",
+                0.14516433307871301
+            ],
+            [
+                "cryptojacking",
+                0.0737546786779068
+            ],
+            [
+                "supply_chain_attack",
+                0.07212716857766634
+            ]
+        ],
+        "hash": "97317f86131f0b19a6146ee43c10e33013cd3c96c5b674cd2bdd190cf2317818",
+        "timestamp": "2025-04-14T00:50:54.185955"
+    },
+    {
+        "threat": "malware\r\n",
+        "category": "fileless_malware",
+        "confidence_scores": [
+            [
+                "fileless_malware",
+                0.15706621397566
+            ],
+            [
+                "advanced_persistent_threat",
+                0.11388709300236882
+            ],
+            [
+                "supply_chain_attack",
+                0.06789302183983308
+            ]
+        ],
+        "hash": "90d28a4fb01fcd73f46f774bcc77c07c47097cb5d57eb2096a66847807bf65a0",
+        "timestamp": "2025-04-14T01:05:21.073790"
+    },
+    {
+        "threat": "malware\r\n",
+        "category": "fileless_malware",
+        "confidence_scores": [
+            [
+                "fileless_malware",
+                0.15706621397566
+            ],
+            [
+                "advanced_persistent_threat",
+                0.11388709300236882
+            ],
+            [
+                "supply_chain_attack",
+                0.06789302183983308
+            ]
+        ],
+        "hash": "70e8b9bf73598ab2fad2ad85212395e4c9e5697c176701a7edb30ad636fa8023",
+        "timestamp": "2025-04-14T01:05:21.393159"
+    },
+    {
+        "threat": "malware\r\n",
+        "category": "fileless_malware",
+        "confidence_scores": [
+            [
+                "fileless_malware",
+                0.15706621397566
+            ],
+            [
+                "advanced_persistent_threat",
+                0.11388709300236882
+            ],
+            [
+                "supply_chain_attack",
+                0.06789302183983308
+            ]
+        ],
+        "hash": "3c2033f3ac7d5cd067580dc0ed6f305e55a228db8008c536e4476b50e07c9835",
+        "timestamp": "2025-04-14T01:06:33.328163"
+    },
+    {
+        "threat": "\"Multiple login attempts detected from different IP addresses using common password combinations\"",
+        "category": "brute_force",
+        "confidence_scores": [
+            [
+                "brute_force",
+                0.2823730620910763
+            ],
+            [
+                "credential_stuffing",
+                0.11876671892990397
+            ],
+            [
+                "malware",
+                0.11046214548227869
+            ]
+        ],
+        "hash": "6947c21ff65750a9c4026075952d1595eb788f8ddbe2938da5ff30ccb34b125b",
+        "timestamp": "2025-04-14T01:07:14.647523",
+        "cleared": true
+    },
+    {
+        "threat": "\"Multiple login attempts detected from different IP addresses using common password combinations\"",
+        "category": "brute_force",
+        "confidence_scores": [
+            [
+                "brute_force",
+                0.2823730620910763
+            ],
+            [
+                "credential_stuffing",
+                0.11876671892990397
+            ],
+            [
+                "malware",
+                0.11046214548227869
+            ]
+        ],
+        "hash": "b5fe7bbd9abbf16f34b58fb34e69bb4f149bdbdfe0712b1887460075d5508a52",
+        "timestamp": "2025-04-14T01:07:50.306882"
+    },
+    {
+        "threat": "\"Multiple login attempts detected from different IP addresses using common password combinations\"",
+        "category": "brute_force",
+        "confidence_scores": [
+            [
+                "brute_force",
+                0.2823730620910763
+            ],
+            [
+                "credential_stuffing",
+                0.11876671892990397
+            ],
+            [
+                "malware",
+                0.11046214548227869
+            ]
+        ],
+        "hash": "2e8282bd11762593a935c6fd56c771efe76b84efd0a2077dcee1b20f36721257",
+        "timestamp": "2025-04-14T01:08:23.185358",
+        "cleared": true
+    },
+    {
+        "threat": "\"Multiple login attempts detected from different IP addresses using common password combinations\"",
+        "category": "brute_force",
+        "confidence_scores": [
+            [
+                "brute_force",
+                0.2823730620910763
+            ],
+            [
+                "credential_stuffing",
+                0.11876671892990397
+            ],
+            [
+                "malware",
+                0.11046214548227869
+            ]
+        ],
+        "hash": "dd9a400304efa9f203c325b0f2dafa25d78dcd66935176d97c26edf8f487f1fa",
+        "timestamp": "2025-04-14T01:08:26.460218",
+        "cleared": true
+    },
+    {
+        "threat": "\"Multiple login attempts detected from different IP addresses using common password combinations\"",
+        "category": "brute_force",
+        "confidence_scores": [
+            [
+                "brute_force",
+                0.2823730620910763
+            ],
+            [
+                "credential_stuffing",
+                0.11876671892990397
+            ],
+            [
+                "malware",
+                0.11046214548227869
+            ]
+        ],
+        "hash": "30b20a5f21e045bc6f8527c6f09444579ed802700d635cd6842d936a779a3a4a",
+        "timestamp": "2025-04-14T01:09:46.166921"
+    },
+    {
+        "threat": "\"Multiple login attempts detected from different IP addresses using common password combinations\"",
+        "category": "brute_force",
+        "confidence_scores": [
+            [
+                "brute_force",
+                0.2823730620910763
+            ],
+            [
+                "credential_stuffing",
+                0.11876671892990397
+            ],
+            [
+                "malware",
+                0.11046214548227869
+            ]
+        ],
+        "hash": "f11b9393cf94f90767108397258bab57f5307c714c5a436bad4489406d7facdd",
+        "timestamp": "2025-04-14T01:10:36.729803",
+        "cleared": true
+    },
+    {
+        "threat": "\"Multiple login attempts detected from different IP addresses using common password combinations\"",
+        "category": "brute_force",
+        "confidence_scores": [
+            [
+                "brute_force",
+                0.2823730620910763
+            ],
+            [
+                "credential_stuffing",
+                0.11876671892990397
+            ],
+            [
+                "malware",
+                0.11046214548227869
+            ]
+        ],
+        "hash": "1535f907873d29e3e0d6366101fde106cdaa075150863d320a5048c874587bf4",
+        "timestamp": "2025-04-14T01:12:09.519097"
+    },
+    {
+        "threat": "\"Multiple login attempts detected from different IP addresses using common password combinations\"",
+        "category": "brute_force",
+        "confidence_scores": [
+            [
+                "brute_force",
+                0.2823730620910763
+            ],
+            [
+                "credential_stuffing",
+                0.11876671892990397
+            ],
+            [
+                "malware",
+                0.11046214548227869
+            ]
+        ],
+        "hash": "2ff7c24eeae840990f2ffa4229c90df25f7fce134a752723be3ce58a37c6cd63",
+        "timestamp": "2025-04-14T01:12:09.619977",
+        "cleared": true
+    },
+    {
+        "threat": "\"Multiple login attempts detected from different IP addresses using common password combinations\"",
+        "category": "brute_force",
+        "confidence_scores": [
+            [
+                "brute_force",
+                0.2823730620910763
+            ],
+            [
+                "credential_stuffing",
+                0.11876671892990397
+            ],
+            [
+                "malware",
+                0.11046214548227869
+            ]
+        ],
+        "hash": "fde7f8dda57a809dce480d1d3888be7f6ae062643b38fd8184327b1c0f23d1a2",
+        "timestamp": "2025-04-14T01:12:09.683374",
+        "cleared": true
+    },
+    {
+        "threat": "\"Multiple login attempts detected from different IP addresses using common password combinations\"",
+        "category": "brute_force",
+        "confidence_scores": [
+            [
+                "brute_force",
+                0.2823730620910763
+            ],
+            [
+                "credential_stuffing",
+                0.11876671892990397
+            ],
+            [
+                "malware",
+                0.11046214548227869
+            ]
+        ],
+        "hash": "55c4b685f21255db32be0a7a9fb2d2171cdc095dfbebe680d3b7ee51a0b2d8cd",
+        "timestamp": "2025-04-14T01:21:21.057378"
+    },
+    {
+        "threat": "\"Multiple login attempts detected from different IP addresses using common password combinations\"",
+        "category": "brute_force",
+        "confidence_scores": [
+            [
+                "brute_force",
+                0.2823730620910763
+            ],
+            [
+                "credential_stuffing",
+                0.11876671892990397
+            ],
+            [
+                "malware",
+                0.11046214548227869
+            ]
+        ],
+        "hash": "2253ce63a788bdb1b999f973505da87b703fdffcc9e69e94c3766720fa496901",
+        "timestamp": "2025-04-14T01:21:33.087940"
+    },
+    {
+        "threat": "\"Multiple login attempts detected from different IP addresses using common password combinations\"",
+        "category": "brute_force",
+        "confidence_scores": [
+            [
+                "brute_force",
+                0.2823730620910763
+            ],
+            [
+                "credential_stuffing",
+                0.11876671892990397
+            ],
+            [
+                "malware",
+                0.11046214548227869
+            ]
+        ],
+        "hash": "dfa77766b7505b497a06243d06f868c86c9a4fb781244c76a97d828d93f45e83",
+        "timestamp": "2025-04-14T01:26:24.847688",
+        "cleared": false
+    },
+    {
+        "threat": "Multiple login attempts detected from different IP addresses using common password combinations",
+        "category": "brute_force",
+        "confidence_scores": [
+            [
+                "brute_force",
+                0.2823730620910763
+            ],
+            [
+                "credential_stuffing",
+                0.11876671892990397
+            ],
+            [
+                "malware",
+                0.11046214548227869
+            ]
+        ],
+        "hash": "bf8b1984d6f374653798a535bab578dab8ae15a026be3372fc3e8345d122fd05",
+        "timestamp": "2025-04-14T21:43:35.503198",
+        "cleared": false
+    }
+]

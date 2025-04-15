@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CTIH Lite</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .confidence-score {
+            color: #666;
+            font-size: 0.9em;
+            margin-left: 1em;
+        }
+        .primary-category {
+            color: #2c5282;
+            font-weight: bold;
+        }
+        .threat-item {
+            margin-bottom: 1.5em;
+            padding: 1em;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5em;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="nav-brand">CTIH</div>
+        <div class="nav-links" id="navLinks">
+            <a href="/" class="active"><i class="fas fa-home"></i> Home</a>
+            <a href="/history"><i class="fas fa-history"></i> History</a>
+            <a href="/about"><i class="fas fa-info-circle"></i> About</a>
+        </div>
+        <div class="nav-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Cyber Threat Intelligence Hub</h2>
+        
+        <div class="input-section">
+            <h3>Submit New Threat</h3>
+            <textarea id="threatInput" placeholder="Describe the threat in detail..."></textarea>
+            <div class="button-group">
+                <button onclick="submitThreat()" class="primary-btn">
+                    <i class="fas fa-shield-alt"></i> Analyze & Submit
+                </button>
+                <button onclick="clearScreen()" class="secondary-btn">
+                    <i class="fas fa-eraser"></i> Clear Screen
+                </button>
+            </div>
+        </div>
+
+        <div class="threats-section">
+            <div class="section-header">
+                <h3>Shared Threats</h3>
+                <button onclick="loadThreats()" class="refresh-btn">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+            </div>
+            <ul id="threatList"></ul>
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

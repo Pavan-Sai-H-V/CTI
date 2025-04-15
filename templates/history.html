@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History - CTIH Lite</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="nav-brand">CTIH</div>
+        <div class="nav-links" id="navLinks">
+            <a href="/"><i class="fas fa-home"></i> Home</a>
+            <a href="/history" class="active"><i class="fas fa-history"></i> History</a>
+            <a href="/about"><i class="fas fa-info-circle"></i> About</a>
+        </div>
+        <div class="nav-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Threat History</h2>
+        
+        <div class="history-filters">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search threats...">
+                <button onclick="filterThreats()"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filter-options">
+                <select id="categoryFilter" onchange="filterThreats()">
+                    <option value="">All Categories</option>
+                    <option value="malware">Malware</option>
+                    <option value="phishing">Phishing</option>
+                    <option value="ddos">DDoS</option>
+                    <option value="ransomware">Ransomware</option>
+                    <option value="sql_injection">SQL Injection</option>
+                    <option value="zero_day">Zero Day</option>
+                    <option value="insider_threat">Insider Threat</option>
+                    <option value="brute_force">Brute Force</option>
+                    <option value="man_in_middle">Man in Middle</option>
+                    <option value="credential_stuffing">Credential Stuffing</option>
+                    <option value="social_engineering">Social Engineering</option>
+                    <option value="advanced_persistent_threat">Advanced Persistent Threat</option>
+                    <option value="iot_exploitation">IoT Exploitation</option>
+                    <option value="supply_chain_attack">Supply Chain Attack</option>
+                    <option value="cryptojacking">Cryptojacking</option>
+                    <option value="data_breach">Data Breach</option>
+                    <option value="privilege_escalation">Privilege Escalation</option>
+                    <option value="watering_hole">Watering Hole</option>
+                    <option value="fileless_malware">Fileless Malware</option>
+                    <option value="domain_spoofing">Domain Spoofing</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="threatList" class="history-list">
+            {% if threats %}
+                {% for threat in threats %}
+                <div class="threat-item" data-hash="{{ threat.hash }}">
+                    <div class="threat-header">
+                        <span class="primary-prediction">{{ threat.category }}</span>
+                        <span class="threat-time">{{ threat.timestamp }}</span>
+                    </div>
+                    <p class="threat-description">{{ threat.threat }}</p>
+                    {% if threat.confidence_scores %}
+                    <div class="confidence-scores">
+                        {% for category, score in threat.confidence_scores %}
+                        <small class="confidence-score">{{ category }}: {{ "%.1f"|format(score * 100) }}%</small>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <div class="threat-footer">
+                        <small class="hash">Hash: {{ threat.hash }}</small>
+                        <button onclick="clearThreat('{{ threat.hash }}')" class="clear-btn">
+                            <i class="fas fa-trash"></i> Clear
+                        </button>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="no-threats">No threats in history yet.</div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function filterThreats() {
+            const searchText = document.getElementById('searchInput').value.toLowerCase();
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const threatItems = document.querySelectorAll('.threat-item');
+
+            threatItems.forEach(item => {
+                const threatText = item.querySelector('.threat-description').textContent.toLowerCase();
+                const threatCategory = item.querySelector('.primary-prediction').textContent;
+                
+                const matchesSearch = threatText.includes(searchText);
+                const matchesCategory = !categoryFilter || threatCategory === categoryFilter;
+                
+                item.style.display = matchesSearch && matchesCategory ? 'block' : 'none';
+            });
+        }
+
+        function clearThreat(hash) {
+            if (confirm('Are you sure you want to clear this threat? This action cannot be undone.')) {
+                fetch(`/clear/${hash}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message === 'Threat cleared') {
+                        const threatItem = document.querySelector(`[data-hash="${hash}"]`);
+                        if (threatItem) {
+                            threatItem.remove();
+                        }
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        }
+    </script>
+</body>
+</html> 

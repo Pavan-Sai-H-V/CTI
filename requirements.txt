@@ -1,0 +1,6 @@
+flask
+pymongo # Optional: if you plan to use MongoDB later
+scikit-learn
+pandas
+joblib
+nltk
